@@ -15,6 +15,7 @@ header{
     background-color: #5b7989;
     width: 100%;
     border-radius: 10px 10px 0 0;
+    animation: 1s animacion;
 }
 
 .menu{
@@ -52,6 +53,7 @@ header{
     text-align: center;
     padding: 1em;
     text-decoration: none;
+    margin: 4px;
 }
 
 .menu .enlaces :hover{
@@ -59,11 +61,15 @@ header{
     color: black;
 }
 
-.paisaje{
+.imagenes{
     background-color: #d5c75f;
     width: 100%;
     box-sizing: border-box;
     padding: 50px;
+}
+
+.imagenes img{
+    box-shadow: 2px 2px #02010a;
 }
 
 .fila1{
@@ -94,18 +100,19 @@ header{
     padding: 0px;
     margin: auto;
 }
-/* 
-.img1 img:hover {
-    transform: rotate(10deg);
-    border: 2px;
-    box-shadow:2px 2px #82c3a6;   
+
+.img1{
+    filter: blur(10px);
 }
 
-.img2 img:hover {
-    transform:translate(20px, -5px);
-    border: 2px;
-    box-shadow:2px 2px #82c3a6;   
-} */
+.img2, .img4, .img6{
+    filter: grayscale(100%);
+}
+
+.img3{
+    filter: sepia(90%);
+}
+
 footer{
     background-color: #C6d5c5;
 }
@@ -134,7 +141,7 @@ footer{
     .contfooter{
         flex-flow: row wrap;
     }
-    .secundaria{
+    .fila1, .fila2{
         flex-flow: row wrap;
     }
     .menu{
@@ -148,5 +155,17 @@ footer{
     }
     .foot{
         height: auto;
+    }
+}
+
+@keyframes animacion{
+    0%{
+        margin-top: 150%;
+    }
+    60%{
+        margin-top: -5%;
+    }
+    100%{
+        margin-top: 0%;
     }
 }
